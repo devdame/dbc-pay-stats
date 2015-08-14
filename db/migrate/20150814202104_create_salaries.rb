@@ -4,6 +4,7 @@ class CreateSalaries < ActiveRecord::Migration
       t.datetime :start_date
       t.datetime :end_date
       t.boolean :negotiated
+      t.belongs_to :job
 
       t.timestamps
     end

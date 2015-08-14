@@ -6,6 +6,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :work_type
       t.datetime :start_date
       t.datetime :end_date
+      t.belongs_to :student
 
       t.timestamps
     end
