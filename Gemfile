@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 gem 'money'
 gem 'money-rails'
 gem 'google_currency'
+gem 'rack-cas'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
