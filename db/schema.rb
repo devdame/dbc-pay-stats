@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814214318) do
+ActiveRecord::Schema.define(version: 20160513200847) do
 
   create_table "jobs", force: true do |t|
     t.string   "title"
-    t.string   "location"
     t.string   "work_type"
     t.datetime "start_date"
     t.datetime "end_date"
@@ -24,10 +23,21 @@ ActiveRecord::Schema.define(version: 20150814214318) do
     t.datetime "updated_at"
   end
 
+  create_table "locations", force: true do |t|
+    t.string   "city"
+    t.string   "region"
+    t.string   "country"
+    t.string   "geoname_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "salaries", force: true do |t|
     t.datetime "start_date"
     t.datetime "end_date"
     t.boolean  "negotiated"
+    t.text     "notes"
+    t.string   "location_geoname_id"
     t.integer  "job_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150814214318) do
   create_table "students", force: true do |t|
     t.string   "gender"
     t.string   "dbc_location"
+    t.boolean  "can_view_publicly"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
